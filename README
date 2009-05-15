@@ -1,0 +1,35 @@
+This project is based on bthidd, developed by Maksim Yevmenkin 
+<m_evmenkin@yahoo.com>, and information from http://www.wiili.org
+
+The usage is very similar to bthidd.
+
+To install the program:
+
+make clean
+make
+make install
+
+To make it work:
+
+1. hccontrol -n ubt0hci inquiry
+2. bthidcontrol -a BD_ADDR query >> /usr/local/etc/bsdmoted.conf
+3. bsdmoted
+
+Then you should be able to use wii remote as a mouse. 
+
+Current default setting is using IR pointing sensor on movement
+control, default left button is button A, right button is button B.
+You can change movement method as IR pointing with -m 1 or touch 
+button 1. You can change movement method as tilting with -m 2 or touch
+button 2. A non-well defined calibration is also made when setting
+movement method.
+
+According to 
+
+http://www.cns.bu.edu/~chhsiao/bsdmoted/gimp.mpg
+
+The IR pointing works well.
+
+Currently conflicts with bthidd (Bind to same bluetooth address.)
+
+Pointing sensor with sensor bar will be available in next version. 
